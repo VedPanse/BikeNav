@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Custom Maps Features",
+  "version": "1.0",
+  "description": "Add custom features to Google Maps.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "contextMenus",
+    "nativeMessaging",
+    "tabs"
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.google.com/maps/*"
+      ],
+      "js": [
+        "content.js"
+      ]
+    }
+  ]
+}
