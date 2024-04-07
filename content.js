@@ -272,16 +272,22 @@ function gasPrices(price) {
     gasPriceText.style.top = "95%";
     gasPriceText.style.left = "75%";
     gasPriceText.style.zIndex = 300;
-    document.body.appendChild(gasPriceText);
+    // document.body.appendChild(gasPriceText);
 }
 
 function addImmersionButton() {
-    const button = document.createElement("button");
-    button.style.backgroundColor = "red";
+    const button = document.createElement("span");
+    button.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+    button.style.backdropFilter = "blur(20px)";
+    button.style.cursor = "pointer";
+    button.style.padding = "5px";
     button.style.position = "absolute";
+
     button.style.top = "70%";
     button.style.right = "2%";
-    button.innerHTML = "IV";
+
+    button.innerHTML = "Immersive View"
+
     button.addEventListener("click", () => {
         startImmersion();
     });
