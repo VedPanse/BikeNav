@@ -277,11 +277,13 @@ function gasPrices(price) {
 
 function addImmersionButton() {
     const button = document.createElement("span");
-    button.style.backgroundColor = "rgb(255, 255, 255, 0.3)";
+    button.style.backgroundColor = "rgb(0, 0, 0, 0.5)";
+    button.style.borderRadius = "5px";
     button.style.backdropFilter = "blur(20px)";
     button.style.cursor = "pointer";
     button.style.padding = "5px";
     button.style.position = "absolute";
+    button.style.color = "white";
 
     button.style.top = "70%";
     button.style.right = "2%";
@@ -396,19 +398,6 @@ function startImmersion() {
     panCamera();
 }
 
-// Function to create and dispatch the event
-function dispatchCmdRightEvent() {
-    var event = new KeyboardEvent('keydown', {
-        bubbles: true,
-        cancelable: true,
-        key: 'ArrowRight',
-        code: 'ArrowRight',
-        ctrlKey: true,  // CMD key on Mac
-    });
-
-    // Dispatching the event to the document
-    document.dispatchEvent(event);
-}
 
 function getCoordinateArray() {
     const source_location = extractCoordinates();

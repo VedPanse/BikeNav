@@ -1,14 +1,21 @@
 {
   "manifest_version": 3,
-  "name": "Custom Maps Features",
+  "name": "BikeNav",
   "version": "1.0",
   "description": "Add custom features to Google Maps.",
+  "icons": {
+    "16": "media/iv.png",
+    "48": "media/iv.png",
+    "128": "media/iv.png"
+  },
   "permissions": [
     "activeTab",
     "storage",
     "contextMenus",
     "nativeMessaging",
-    "tabs"
+    "tabs",
+    "mediaSource",
+    "videoCapture"
   ],
   "action": {
     "default_popup": "popup.html"
@@ -23,6 +30,14 @@
       ],
       "js": [
         "content.js"
+      ]
+    },
+    {
+      "matches": [
+        "*://earth.google.com/*"
+      ],
+      "js": [
+        "earth_content.js"
       ]
     }
   ]
